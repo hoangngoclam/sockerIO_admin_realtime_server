@@ -16,20 +16,3 @@ export interface SocketData {
     name: string;
     age: number;
 }
-
-// types for the namespace named "/my-namespace"
-export interface NamespaceSpecificClientToServerEvents {
-    message: (arg: string) => void
-}
-
-export interface NamespaceSpecificServerToClientEvents {
-    message: (arg: string) => void;
-}
-
-export interface NamespaceSpecificInterServerEvents {
-    // ...
-}
-
-export interface NamespaceSpecificSocketData {
-    // ...
-}
