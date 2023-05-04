@@ -10,7 +10,7 @@ import {
     NamespaceSpecificServerToClientEvents,
 } from "./interfaces/sockerTransferInterface";
 
-const PORT = 3000;
+const PORT = 5000;
 const io = new Server<
     ClientToServerEvents,
     ServerToClientEvents,
@@ -26,7 +26,11 @@ const myNamespace: Namespace<
 > = io.sockets;
 
 myNamespace.on("connection", (socket) => {
-    console.log(`Connected: ${socket}`);
+    if (!socket.handshake.query || !socket.handshake.query.type) {
+        socket.disconnect();
+    }
+    console.log(`Socket connect: ${socket.handshake.query.type}`);
+
     // Check socket connect is client or admin_manager
     // if client: create client - save to database
     // broadcast message for room admin_manager

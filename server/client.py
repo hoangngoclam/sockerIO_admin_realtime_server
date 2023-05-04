@@ -3,11 +3,11 @@ import time
 sio = socketio.Client()
 
 
-@sio.event(namespace='/ngoc-lam')
+@sio.event
 def connect():
     print("I'm connected!")
     time.sleep(2)
-    sio.emit('message', {'foo': 'bar'},namespace='/ngoc-lam')
+    sio.emit('message', "hello server")
     print("I'm connected!")
 
 @sio.event
@@ -19,6 +19,6 @@ def disconnect():
     print("I'm disconnected!")
 
 print("Start connect")
-sio.connect('ws://localhost:3000', namespaces='/ngoc-lam')
+sio.connect('ws://localhost:5000')
 
 sio.wait()
