@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --ext ts,d.ts --exec ts-node test.ts"
+    "start": "nodemon --ext ts,d.ts --exec ts-node server.ts"
   },
   "author": "",
   "license": "ISC",
