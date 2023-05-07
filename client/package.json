@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev:local": "dotenv -e .env.local next dev",
+    "dev:staging": "dotenv -e .env.staging next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -23,6 +24,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@types/node": "^20.1.0"
+    "@types/node": "^20.1.0",
+    "dotenv": "^16.0.3"
   }
 }

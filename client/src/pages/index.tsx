@@ -25,7 +25,7 @@ const IndexPage = () => {
     const [socket, setSocket] = useState<Socket | null>(null);
 
     useEffect(() => {
-        const newSocket: Socket = io("ws://localhost:5000", {
+        const newSocket: Socket = io(process.env.SOCKET_IO_HOSTNAME ?? "", {
             query: {
                 type: "admin_manager",
             },

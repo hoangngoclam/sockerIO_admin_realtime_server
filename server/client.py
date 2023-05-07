@@ -43,6 +43,6 @@ def running(soc):
 
 
 print("Start connect")
-sio.connect('ws://localhost:5000', headers={'name': "NgocLam"})
+sio.connect('ws://149.28.26.76:5000', headers={'name': "NgocLam"})
 running(sio)
 sio.wait()
