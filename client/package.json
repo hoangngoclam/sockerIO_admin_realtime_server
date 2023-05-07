@@ -6,6 +6,9 @@
     "dev:local": "dotenv -e .env.local next dev",
     "dev:staging": "dotenv -e .env.staging next dev",
     "build": "next build",
+    "build-prod": "run-s clean build export",
+    "export": "next export",
+    "clean": "rimraf .next out",
     "start": "next start",
     "lint": "next lint"
   },
@@ -16,6 +19,7 @@
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.4",
     "next": "13.3.4",
+    "npm-run-all": "^4.1.5",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",

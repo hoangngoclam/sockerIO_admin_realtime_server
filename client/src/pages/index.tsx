@@ -25,11 +25,14 @@ const IndexPage = () => {
     const [socket, setSocket] = useState<Socket | null>(null);
 
     useEffect(() => {
-        const newSocket: Socket = io(process.env.SOCKET_IO_HOSTNAME ?? "", {
-            query: {
-                type: "admin_manager",
-            },
-        });
+        const newSocket: Socket = io(
+            process.env.NEXT_PUBLIC_SOCKET_IO_HOSTNAME ?? "",
+            {
+                query: {
+                    type: "admin_manager",
+                },
+            }
+        );
         setSocket(newSocket);
         newSocket.on("connect", () => {
             console.log("Connected to server");
