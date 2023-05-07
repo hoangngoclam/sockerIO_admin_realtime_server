@@ -11,9 +11,9 @@ datasource db {
 }
 
 model Client {
-  id          Int      @id @default(autoincrement())
-  socker_id   String   @unique
-  name        String?
-  message     String?
-  is_running  Boolean  @default(false)
+  id         Int     @id @default(autoincrement())
+  socket_id  String  @unique
+  name       String?
+  message    String?
+  is_running Boolean @default(false)
 }

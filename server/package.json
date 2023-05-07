@@ -16,6 +16,7 @@
     "socket.io": "^4.6.1"
   },
   "devDependencies": {
+    "@types/node": "^20.1.0",
     "prisma": "^4.13.0",
     "typescript": "^5.0.4"
   }
