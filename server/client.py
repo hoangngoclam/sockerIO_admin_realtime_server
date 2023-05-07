@@ -3,6 +3,7 @@ import time
 sio = socketio.Client()
 
 isRunning = False
+CLIENT_NAME = "MAY 01"
 
 
 @sio.event
@@ -43,6 +44,6 @@ def running(soc):
 
 
 print("Start connect")
-sio.connect('ws://localhost:5000', headers={'name': "NgocLam"})
+sio.connect('ws://149.28.26.76:5000', headers={'name': CLIENT_NAME})
 running(sio)
 sio.wait()
